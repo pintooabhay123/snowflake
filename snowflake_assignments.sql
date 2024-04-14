@@ -1,6 +1,6 @@
 use role securityadmin;
 
--- 1. Create roles as per the below-mentioned hierarchy. Accountadmin already exists in Snowflake.
+-- 1. Create roles as per the below-mentioned hierarchy. Accountadmin already exists in Snowflake. first commit
 create role admin;
 grant role admin to role sysadmin;
 
