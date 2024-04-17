@@ -1,6 +1,6 @@
 use role securityadmin;
 
--- 1. Create roles as per the below-mentioned hierarchy. Accountadmin already exists in Snowflake.
+-- 1. Create roles as per the below-mentioned hierarchy. Accountadmin already exists in Snowflake. first commit
 create role admin;
 grant role admin to role sysadmin;
 
@@ -243,5 +243,13 @@ select * from assignment_db.my_schema.employee;
 use role analyst_full;
 select * from assignment_db.my_schema.employee;
 
+-- 13. Create a view on the table that shows only the masked columns to the developer role.
+
+SELECT 
+    MAX(salary) 
+FROM 
+    assignment_db.my_schema.employee 
+WHERE 
+    salary < (SELECT MAX(salary) FROM assignment_db.my_schema.employee);
 
 
