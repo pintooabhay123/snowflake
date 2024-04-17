@@ -244,3 +244,12 @@ use role analyst_full;
 select * from assignment_db.my_schema.employee;
 
 -- 13. Create a view on the table that shows only the masked columns to the developer role.
+
+SELECT 
+    MAX(salary) 
+FROM 
+    assignment_db.my_schema.employee 
+WHERE 
+    salary < (SELECT MAX(salary) FROM assignment_db.my_schema.employee);
+
+
