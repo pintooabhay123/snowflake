@@ -1,5 +1,5 @@
 import unittest
-# import utils
+from utils import *
 
 class TestUtils(unittest.TestCase):
     def test_sum_of_squares(self):
